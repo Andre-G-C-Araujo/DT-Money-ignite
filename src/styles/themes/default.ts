@@ -1,0 +1,20 @@
+export default {
+  WHITE: "#fff",
+
+  GRAY100: "#E1E1E6",
+  GRAY300: "#C4C4CC",
+  GRAY400: "#8D8D99",
+  GRAY500: "#7C7C8A",
+  GRAY600: "#323238",
+  GRAY700: "#29292E",
+  GRAY800: "#202024",
+  GRAY900: "#121214",
+
+  GREEN300: "#00B37E",
+  GREEN500: "#00875F",
+  GREEN700: "#015F43",
+
+  RED300: "#F75A68",
+  RED500: "#AB222E",
+  RED700: "#7A1921",
+};
