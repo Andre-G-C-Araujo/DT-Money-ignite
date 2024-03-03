@@ -23,6 +23,22 @@
       "category": "Açoes",
       "price": 365,
       "createdAt": "2024-03-03T14:17:22.435Z"
+    },
+    {
+      "id": 4,
+      "description": "Desenvolvimento de vida",
+      "category": "vida",
+      "price": 10000,
+      "type": "income",
+      "createdAt": "2024-03-03T20:41:30.964Z"
+    },
+    {
+      "id": "0ec5",
+      "description": "Bolo",
+      "category": "Alimentaçao",
+      "price": 15,
+      "type": "income",
+      "createdAt": "2024-03-03T21:03:36.378Z"
     }
   ]
 }

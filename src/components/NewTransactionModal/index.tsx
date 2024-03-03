@@ -10,6 +10,8 @@ import { ArrowCircleDown, ArrowCircleUp, X } from "phosphor-react";
 import * as z from "zod";
 import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { TransactionContext } from "../../context/TransactionsContext";
+import { useContextSelector } from "use-context-selector";
 
 const newTransactionFormSchema = z.object({
   description: z.string(),
@@ -21,8 +23,16 @@ const newTransactionFormSchema = z.object({
 type NewTransactionsFormInputs = z.infer<typeof newTransactionFormSchema>;
 
 export const NewTransactionModal = () => {
+  const createTransactions = useContextSelector(
+    TransactionContext,
+    (context) => {
+      return context.createTransactions;
+    }
+  );
+
   const {
     control, // para pegar informaçao quando nao vier de um compoente nativo do html
+    reset,
     register,
     handleSubmit,
     formState: { isSubmitting },
@@ -34,9 +44,16 @@ export const NewTransactionModal = () => {
   });
 
   async function handleCreateNewTransactions(data: NewTransactionsFormInputs) {
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    const { description, category, price, type } = data;
 
-    console.log(data);
+    await createTransactions({
+      description,
+      category,
+      price,
+      type,
+    });
+
+    reset();
   }
 
   return (
@@ -73,8 +90,6 @@ export const NewTransactionModal = () => {
             control={control}
             name="type"
             render={({ field }) => {
-              console.log(field);
-
               return (
                 <TransactionType
                   onValueChange={field.onChange}

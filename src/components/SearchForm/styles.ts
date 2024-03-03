@@ -37,7 +37,7 @@ export const SearchFormContainer = styled.form`
     }
 
     &:not(:disabled):hover {
-      background-color: ${({ theme }) => theme.GREEN500};
+      background-color: ${({ theme }) => theme.RED500};
       border-color: 1px solid ${({ theme }) => theme.GREEN300};
       color: ${({ theme }) => theme.WHITE};
       transition: backgroun-color 300ms, color 300ms, border-color 300ms;
